@@ -42,8 +42,20 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 directioon = (target.position - transform.position).normalized;
-
+        RotateTowardsTarget();
         rb.linearVelocity = directioon * moveSpeed;
+    }
+
+    private void RotateTowardsTarget()
+    {
+        if (target.position.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 
     public void UpdateSpeed(float newSpeed)

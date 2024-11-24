@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     public Transform[] path;
 
     public int currentWave;
-    public int lastWave = 20;
+    public int lastWave = 15;
     public int remainLives;
     public int lives = 5;
     public int currency;
